@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs/internal/Observable';
@@ -13,15 +13,12 @@ import { GamesStoreState } from 'src/app/states/game-store.state.component';
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss']
 })
-export class StoreComponent implements OnInit {
+export class StoreComponent {
 
   constructor(private gameService: GameService, private store: Store, private router: Router) { }
 
   @Select(GamesStoreState.searchResults)
   searchResults$: Observable<Result[]>;
-
-  ngOnInit(): void {
-  }
 
   searchForGame(searchTerm: string) {
     let params = this.generateNewGameSearchParams(searchTerm);

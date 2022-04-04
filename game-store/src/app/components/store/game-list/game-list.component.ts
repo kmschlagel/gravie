@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 import { Result } from 'src/app/models/search-result.model';
 
 @Component({
@@ -7,7 +7,7 @@ import { Result } from 'src/app/models/search-result.model';
   styleUrls: ['./game-list.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class GameListComponent implements OnInit {
+export class GameListComponent {
 
   @Input()
   searchResults: Result[];
@@ -16,10 +16,6 @@ export class GameListComponent implements OnInit {
   gameSelected: EventEmitter<Result> = new EventEmitter<Result>();
 
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
 
   onGameSelection(result: Result) {
     this.gameSelected.emit(result);
