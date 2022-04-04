@@ -1,2 +1,19 @@
-<app-search (search)="searchForGame($event)"></app-search>
-<app-game-list [searchResults]="searchResults$ | async" (gameSelected)="addGameForRental($event)"></app-game-list>
+<div class="wrapper">
+  <div class="header">
+    <h1>Game Store</h1>
+    <h4>Find games. Rent games. That's it.</h4>
+  </div>
+  <div class="actions">
+    <app-search (search)="searchForGame($event)"></app-search>
+    <div>
+      <button mat-raised-button color="secondary" (click)="routeToCheckout()">
+        Checkout
+      </button>
+    </div>
+  </div>
+
+  <app-game-list
+    [searchResults]="searchResults$ | async"
+    (gameSelected)="addGameForRental($event)"
+  ></app-game-list>
+</div>

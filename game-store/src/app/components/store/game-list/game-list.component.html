@@ -1,11 +1,11 @@
-<div class="card-container">
+<div class="game-list-card-container">
   <mat-card *ngFor="let result of searchResults" class="game-card">
     <mat-card-header>
       <mat-card-title>{{ result.name }}</mat-card-title>
     </mat-card-header>
     <img mat-card-image [src]="result.image.medium_url">
     <mat-card-actions>
-      <button mat-button (click)="onGameSelection(result)">Rent</button>
+      <button mat-raised-button color="secondary" (click)="onGameSelection(result)">Rent</button>
     </mat-card-actions>
   </mat-card>
 </div>

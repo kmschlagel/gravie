@@ -1,1 +1,14 @@
-<p>checkout works!</p>
+<div class="wrapper">
+  <h2>Items in your cart: </h2>
+  <div class="checkout-card-container" *ngIf="selectedItems.length">
+    <mat-card *ngFor="let item of selectedItems" class="checkout-card">
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="item.image.thumb_url">
+    </mat-card>
+  </div>
+  <button mat-raised-button color="secondary" (click)="routeToStore()" class="back">Back to search</button>
+</div>
+
+

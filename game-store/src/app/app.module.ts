@@ -12,6 +12,7 @@ import {
 } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 import { GamesStoreState } from './states/game-store.state.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { GamesStoreState } from './states/game-store.state.component';
     BrowserAnimationsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JsonpInterceptor, multi: true },

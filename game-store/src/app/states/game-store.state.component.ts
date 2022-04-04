@@ -5,6 +5,7 @@ import {
   UpdateSelectedItems,
 } from './actions/state.actions';
 import { patch, append } from '@ngxs/store/operators';
+
 const DEFAULT_STATE = {
   searchResults: [],
   selectedItems: [],
@@ -22,6 +23,11 @@ export class GamesStoreState {
     return state.searchResults;
   }
 
+  @Selector()
+  static selectedItems(state: GameStoreStateModel) {
+    return state.selectedItems;
+  }
+
   @Action(UpdateSearchResults)
   updateSearchResults(
     { patchState }: StateContext<GameStoreStateModel>,
@@ -35,10 +41,14 @@ export class GamesStoreState {
     ctx: StateContext<GameStoreStateModel>,
     { result }: UpdateSelectedItems
   ) {
-    ctx.setState(
-      patch({
-        selectedItems: append([result]),
-      })
-    );
+    let currentState = ctx.getState();
+        let updatedState = { ...currentState };
+        updatedState.selectedItems = [...updatedState.selectedItems, result];
+        ctx.setState(updatedState);
+    // ctx.setState(
+    //   patch({
+    //     selectedItems: append([result]),
+    //   })
+    // );
   }
 }

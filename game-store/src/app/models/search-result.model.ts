@@ -13,4 +13,5 @@ export class Result {
 export class ResultImage {
   icon_url?: string;
   medium_url?: string;
+  thumb_url?: string;
 }
