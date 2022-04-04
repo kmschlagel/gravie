@@ -7,9 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { StoreComponent } from './store/store.component';
 import { GameListComponent } from './store/game-list/game-list.component';
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [SearchComponent, CheckoutComponent, StoreComponent, GameListComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule, MatCardModule],
 })
 export class ComponentsModule {}

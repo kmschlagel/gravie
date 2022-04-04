@@ -1,2 +1,2 @@
 <app-search (search)="searchForGame($event)"></app-search>
-<app-game-list></app-game-list>
+<app-game-list [searchResults]="searchResults$ | async" (gameSelected)="addGameForRental($event)"></app-game-list>
