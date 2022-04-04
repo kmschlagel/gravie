@@ -24,7 +24,6 @@ export class CheckoutComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.push(this.selectedItems$.subscribe(items => {
-      console.log(items);
       this.selectedItems = items;
     }))
   }

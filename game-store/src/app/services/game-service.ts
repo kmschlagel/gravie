@@ -37,8 +37,7 @@ export class GameService {
     return this.httpClient.jsonp<SearchResponse>(this.SEARCH_URL, 'json_callback')
       .pipe(
         catchError((error) => {
-          console.log(error);
-          TODO: // handle error
+          //TODO: handle error
           return of<SearchResponse>();
         })
       );

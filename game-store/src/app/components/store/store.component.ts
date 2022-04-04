@@ -26,7 +26,6 @@ export class StoreComponent implements OnInit {
   searchForGame(searchTerm: string) {
     let params = this.generateNewGameSearchParams(searchTerm);
     this.gameService.search(params).subscribe(searchResponse => {
-      console.log(searchResponse.results);
       this.store.dispatch(new UpdateSearchResults(searchResponse.results));
     })
   }
